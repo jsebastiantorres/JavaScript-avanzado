@@ -1,0 +1,23 @@
+{
+  "name": "javascript-avanzado",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsebastiantorres/JavaScript-avanzado.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsebastiantorres/JavaScript-avanzado/issues"
+  },
+  "homepage": "https://github.com/jsebastiantorres/JavaScript-avanzado#readme",
+  "description": "",
+  "devDependencies": {
+    "eslint": "^9.31.0"
+  }
+}
