@@ -132,12 +132,3 @@ var palabraFiltrar = "Nasa";
 
 // var arrayMarcas = filtrarPalabra(arrMarcas, criterioFiltrardo, palabraFiltrar);
 // console.log(arrayMarcas);
-
-
-function filtradoModular(arr, palabra) {
-    let resultado = arr.filter(e => e === palabra);
-    return resultado
-}
-
-var arryFiltrado = filtradoModular(arrMarcas, palabraFiltrar);
-console.log(arryFiltrado);
