@@ -212,10 +212,51 @@ const tareas2 = [
 
 function buscarIndex(arr) {
     let indexEncontrado = arr.findIndex(element => !element.completado)
-    return indexEncontrado === -1 ? "No se encontraron elementos" : indexEncontrado 
+    return indexEncontrado === -1 ? "No se encontraron elementos" : indexEncontrado
 }
 
 var indiceEncontrado = buscarIndex(tareas2);
 console.log(indiceEncontrado);
+
+
+// 9. 🔢 .sort()
+// Ordena las edades de menor a mayor.
+// 💡 Bonus: Ordena el mismo array en orden descendente
+
+const edades = [45, 18, 100, 32, 26, 60];
+
+function odenarMenorMayor(arr) {
+    return menorMayor = arr.sort((a, b) => a - b);
+}
+
+function ordenarMayorMenor(arr) {
+    return mayorMenor = arr.sort((a, b) => b - a);
+}
+
+var menorMayor = odenarMenorMayor(edades);
+console.log(menorMayor);
+
+var mayorMenor = ordenarMayorMenor(edades);
+console.log(mayorMenor);
+
+
+// 10 🌐 .flatMap()
+// Obtén una lista plana con todos los nombres de los miembros.
+
+const grupos = [
+  { nombre: "Equipo A", miembros: ["Ana", "Luis"] },
+  { nombre: "Equipo B", miembros: ["Carlos", "Nina"] },
+  { nombre: "Equipo C", miembros: ["Rafa"] }
+];
+
+
+function generarNuevaLista(arr) {
+    let listaNomresMiembros = arr.flatMap(x => x.miembros);
+    return listaNomresMiembros
+}
+
+var nombresMiembros = generarNuevaLista(grupos);
+console.log(nombresMiembros);
+
 
 
