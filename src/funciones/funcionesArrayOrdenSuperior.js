@@ -49,6 +49,16 @@ function editarPrecios(x) {
 var nuevosPrecios = precios.map(editarPrecios);
 console.log(nuevosPrecios);
 
+// version mejorada
+
+function transformarArray(arr) {
+    let transformado = arr.map(elemento => "$" + elemento);
+    return transformado
+}
+
+var arrayTransformado =  transformarArray(precios);
+console.log(`Map mejorado: ${arrayTransformado}`);
+
 
 // 3️⃣ reduce()
 // Tienes el siguiente array:
@@ -244,9 +254,9 @@ console.log(mayorMenor);
 // Obtén una lista plana con todos los nombres de los miembros.
 
 const grupos = [
-  { nombre: "Equipo A", miembros: ["Ana", "Luis"] },
-  { nombre: "Equipo B", miembros: ["Carlos", "Nina"] },
-  { nombre: "Equipo C", miembros: ["Rafa"] }
+    { nombre: "Equipo A", miembros: ["Ana", "Luis"] },
+    { nombre: "Equipo B", miembros: ["Carlos", "Nina"] },
+    { nombre: "Equipo C", miembros: ["Rafa"] }
 ];
 
 
