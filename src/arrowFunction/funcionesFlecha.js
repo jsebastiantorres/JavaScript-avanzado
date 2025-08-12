@@ -103,6 +103,5 @@ console.log(cuadradoDe(5));
 // con cada número elevado al cuadrado, usando map y una función de flecha anónima.
 var cuadradosArray = (arr) => { let cuadrados = arr.map(e => e ** 2); return cuadrados }
 var numeros = [1, 2, 3, 4, 5];
-
 console.log(cuadradosArray(numeros));
 
