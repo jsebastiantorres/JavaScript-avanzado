@@ -29,6 +29,22 @@ promesa
 // Usa .then() y .catch() para manejar el resultado y mostrarlo en consola.
 
 
+const usuarios = ["Sebas", "Sebastian", "Juan"];
+
+const nombre = "juan";
+
 function verificarUsuario(nombre) {
-    let resultado = new Promise((resolve, reject) => { })
+    return new Promise((resolve, reject) => {
+        if (usuarios.find(e => e === nombre)) {
+            resolve(`Bienvenido ${nombre}`)
+        } else {
+            reject(`Acceso denegado`)
+        }
+    });
 }
+
+verificarUsuario("Seba")
+    .then((resultado) => console.log(resultado))
+    .catch((error) => console.log("Se ha producido un problema: ", error));
+
+

@@ -60,3 +60,8 @@ function despedir(nombre) {
 var nombres = "Juan Sebastián"
 var saludo = saludar(nombres, despedir)
 console.log(saludo);
+
+
+
+
+
