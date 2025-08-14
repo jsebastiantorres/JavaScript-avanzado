@@ -15,16 +15,20 @@ promesa
 
 
 
-// Contexto: Estás desarrollando una función que simula la descarga de archivos desde un servidor. 
-// Cada archivo puede tardar un tiempo aleatorio en descargarse y puede fallar con cierta probabilidad.
+// Objetivo: Simular una verificación de usuario con una promesa.
 
-// Tu reto: Implementa una función descargarArchivo(nombreArchivo) que devuelva una promesa.Esta promesa debe:
+// 🔧 Instrucciones
+// Crea una función verificarUsuario(nombre) que devuelva una promesa.
 
-// Resolverse después de un tiempo aleatorio(entre 1 y 3 segundos) con el mensaje: 
-// "Archivo [nombreArchivo] descargado exitosamente."
+// La promesa debe:
 
-// Rechazarse con el mensaje: "Error al descargar el archivo [nombreArchivo].
-// " con una probabilidad del 30 %.
+// Resolverse si el nombre es "Sebastián" con el mensaje: "Usuario verificado: Sebastián".
 
-// Luego, crea una función que intente descargar tres archivos en secuencia 
-// usando.then() y.catch(), mostrando los mensajes correspondientes en consola.
+// Rechazarse si el nombre es diferente, con el mensaje: "Usuario no reconocido".
+
+// Usa .then() y .catch() para manejar el resultado y mostrarlo en consola.
+
+
+function verificarUsuario(nombre) {
+    let resultado = new Promise((resolve, reject) => { })
+}
