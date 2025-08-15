@@ -139,8 +139,48 @@ iniciarSesion()
 // - Usa.catch() al final para manejar cualquier error en la cadena.
 
 
+// Ejercicio 4: Manejo de Errores en Cadena
+// Objetivo: Practicar cómo manejar errores en una cadena de promesas.
+// 🔧 Instrucciones:
+// - Reutiliza las funciones del ejercicio 3.
+// - Modifica cargarDatos() para que a veces falle (por ejemplo, usando Math.random()).
+// - Asegúrate de capturar el error con .catch() y mostrar "Error al cargar datos" sin romper la cadena.
 
 
+
+
+function iniciarSesion() {
+    return new Promise((resolve, reject) => resolve("Sesión iniciada"))
+}
+
+function cargarDatos() {
+
+    let exito = Math.floor(Math.random() * 10) + 1;
+
+    return new Promise((resolve, reject) => {
+        if (exito > 5) {
+            resolve("Datos cargados")
+        } else {
+            reject("No fue exitoso el cargue de datos")
+        }
+    });
+}
+
+function mostrarDashboard() {
+    return new Promise((resolve, reject) => resolve("Dashboard mostrado"))
+}
+
+iniciarSesion()
+    .then(res => {
+        console.log(res);
+        return cargarDatos();
+    })
+    .then(res => {
+        console.log(res);
+        return mostrarDashboard();
+    })
+    .then(res => console.log(res))
+    .catch(err => console.error(err));
 
 
 
