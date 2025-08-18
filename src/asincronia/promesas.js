@@ -185,6 +185,84 @@ iniciarSesion()
 
 
 
+// Ejercicio 5: Validación Secuencial de Múltiples Elementos
+// Objetivo: Validar una lista de usuarios uno por uno, en orden, sin detenerse por errores.
+// 🔧 Instrucciones:
+// - Crea una función verificarUsuario(nombre) que devuelva una promesa (como ya hiciste antes).
+// - Crea otra función verificarUsuariosSecuencialmente(lista) que:
+// - Verifique cada usuario en orden.
+// - Muestre el resultado de cada verificación.
+// - Continúe aunque haya errores.
+// - Al final, muestre cuántos usuarios fueron verificados exitosamente y cuántos fallaron.
+
+
+
+
+
+function verificarUsuario(nombre) {
+    let usuarios = ["Juan", "Sebas", "Sebastian"];
+
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (usuarios.includes(nombre)) {
+                resolve(`Acceso correcto para el usuario ${nombre}`)
+            } else {
+                reject(`El usuario ${nombre} no tiene acceso`)
+            }
+        }, 1000);
+    });
+}
+
+
+
+function verificarUsuariosSecuencialmente(lista) {
+    let exitos = 0;
+    let fallos = 0;
+
+    //verificar un usuario a la vez, usando su posición
+    function procesar(index) {
+        //si el índice supera el tamaño de la lista, significa que ya se procesaron todos los usuarios.
+        if (index >= lista.length) {
+            console.log(`\n Resumen Final: `);
+            console.log(`Usuarios verificados exitosamente: ${exitos}`);
+            console.log(`Usuarios fallidos: ${fallos}`);
+            return;
+        }
+
+        //Verifica el usuario, devuelve una promesa
+        verificarUsuario(lista[index])
+            // promesa resuelta
+            .then(res => {
+                console.log(res);
+                // incrementa exitos
+                exitos++;
+                //llama a procesar con el siguiente index
+                return procesar(index + 1);
+            })
+            //promesa sin resolver
+            .catch(err => {
+                console.log(err);
+                // incrementa fallos
+                fallos++;
+                //llama a procesar con el siguiente index
+                return procesar(index + 1);
+            });
+    }
+
+    // inicia la verificación desde el primer usuario
+    procesar(0);
+}
+
+
+var arrayUsuariosPrueba = ["Juan", "Sebastian"]
+verificarUsuariosSecuencialmente(arrayUsuariosPrueba)
+
+
+
+
+
+
+
 
 
 
